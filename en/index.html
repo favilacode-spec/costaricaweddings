@@ -3,454 +3,199 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fabian Photography — Wedding Photographer in Costa Rica</title>
+<title>Fabian Ávila Photography</title>
+<meta name="description" content="Wedding and event photographer. Real stories, captured with emotion and natural light.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
-<link rel="icon" href="favicon/favicon.ico" sizes="any">
-<link rel="icon" href="favicon/favicon-32.png" type="image/png">
-<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png">
-<style>
-  :root{
-    --dark:#17241C;
-    --accent:#A9714C;
-    --light:#EFEAE0;
-    --gray:#6E7A6E;
-  }
-  *{margin:0;padding:0;box-sizing:border-box;}
-  body{font-family:'Georgia', 'Times New Roman', serif; color:#2b2b2b; background:var(--light); line-height:1.6;}
-  h1,h2,h3{font-family:'Helvetica Neue', Arial, sans-serif; letter-spacing:1px;}
-  a{text-decoration:none; color:inherit;}
-  .container{max-width:1100px; margin:0 auto; padding:0 24px;}
-
-  /* NAV */
-  nav{position:sticky; top:0; background:rgba(255,255,255,0.95); z-index:50; border-bottom:1px solid #e5e0d8;}
-  nav .container{display:flex; justify-content:space-between; align-items:center; padding:16px 24px;}
-  .logo{font-size:15px; font-weight:300; color:var(--dark); font-family:'Montserrat',Arial,sans-serif; letter-spacing:3px; text-transform:uppercase;}
-
-  /* HERO */
-  .hero{position:relative; height:88vh; min-height:520px; display:flex; align-items:center; justify-content:center; text-align:center; color:#fff;
-    background:linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.55) 70%, rgba(10,10,10,0.8) 100%), url('gallery/hero-bw.jpg');
-    background-size:cover; background-position:center 30%;}
-  .hero-content h1{font-size:44px; margin-bottom:14px; text-transform:uppercase;}
-  .hero-content p{font-size:18px; max-width:560px; margin:0 auto 28px; opacity:0.92; font-family:'Helvetica Neue',Arial,sans-serif;}
-  .btn{display:inline-block; background:var(--accent); color:var(--dark); padding:14px 32px; border-radius:2px; font-family:'Helvetica Neue',Arial,sans-serif; font-weight:bold; letter-spacing:1px; text-transform:uppercase; font-size:13px; transition:opacity .2s;}
-  .btn:hover{opacity:0.85;}
-  .hero-badge{position:absolute; bottom:28px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:13px; letter-spacing:2px; text-transform:uppercase; opacity:0.85;}
-
-  /* SECTIONS */
-  section{padding:80px 0;}
-  .section-title{text-align:center; margin-bottom:48px;}
-  .section-title span{display:block; font-family:'Helvetica Neue',Arial,sans-serif; font-size:12px; letter-spacing:3px; text-transform:uppercase; color:var(--accent); margin-bottom:10px;}
-  .section-title h2{font-size:32px; color:var(--dark);}
-
-  /* ABOUT */
-  .about p{max-width:680px; margin:0 auto 16px; text-align:center; color:var(--gray); font-size:17px;}
-  .pura-vida-mark{display:flex; flex-direction:column; align-items:center; gap:8px; margin:-8px 0 28px;}
-  .pura-vida-text{font-family:'Montserrat',Arial,sans-serif; font-weight:500; font-size:15px; letter-spacing:4px; text-transform:uppercase; color:var(--accent);}
-  .cr-map{width:28px; height:28px; color:var(--accent);}
-
-  /* GALLERY */
-  .gallery{background:#fff;}
-  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px;}
-  .ph{aspect-ratio:1/1; overflow:hidden; border-radius:2px; background:#e7e2d8;}
-  .ph img{width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease;}
-  .ph:hover img{transform:scale(1.06);}
-  .wedding-gallery{margin-bottom:56px;}
-  .wedding-gallery:last-child{margin-bottom:0;}
-  .wedding-gallery-title{display:flex; align-items:baseline; gap:14px; margin-bottom:20px;}
-  .wedding-gallery-title h3{font-size:22px; color:var(--dark); letter-spacing:1px;}
-  .wedding-gallery-title span{font-family:'Georgia',serif; font-style:italic; color:var(--accent); font-size:15px;}
-
-  /* SERVICES */
-  .cards{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
-  .cards-4{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
-  .card{background:#fff; padding:32px 24px; border-top:3px solid var(--accent); text-align:center;}
-  .card h3{color:var(--dark); font-size:20px; margin-bottom:10px;}
-  .price{font-size:28px; color:var(--accent); font-weight:bold; margin:14px 0; font-family:'Helvetica Neue',Arial,sans-serif;}
-  .price small{font-size:14px; color:var(--gray); display:block; font-weight:normal;}
-  .card ul{list-style:none; text-align:left; margin-top:14px; font-size:14px; color:var(--gray);}
-  .card li{padding:4px 0; padding-left:18px; position:relative;}
-  .card li:before{content:"—"; position:absolute; left:0; color:var(--accent);}
-  .badge-launch{display:inline-block; background:var(--dark); color:#fff; font-size:11px; letter-spacing:1px; padding:4px 10px; border-radius:12px; font-family:'Helvetica Neue',Arial,sans-serif; margin-bottom:10px;}
-
-  /* PARTNERS */
-  .partners{background:var(--dark); color:#fff; text-align:center;}
-  .partners h2{color:#fff;}
-  .partners p{max-width:600px; margin:0 auto 24px; opacity:0.9;}
-  .partners .btn{background:var(--accent);}
-
-  /* CONTACT */
-  .contact{text-align:center;}
-  .contact-grid{display:flex; justify-content:center; gap:48px; margin-top:32px; flex-wrap:wrap; font-family:'Helvetica Neue',Arial,sans-serif;}
-  .contact-item{font-size:15px;}
-  .contact-item strong{display:block; color:var(--dark); margin-bottom:6px; letter-spacing:1px; text-transform:uppercase; font-size:12px;}
-
-  footer{background:#171717; color:#999; text-align:center; padding:28px 0; font-family:'Helvetica Neue',Arial,sans-serif; font-size:13px;}
-
-  @media (max-width:720px){
-    .grid, .cards, .cards-4{grid-template-columns:repeat(2,1fr);}
-    .hero-content h1{font-size:30px;}
-  }
-  @media (max-width:480px){
-    .grid, .cards, .cards-4{grid-template-columns:1fr;}
-  }
-</style>
+<link rel="icon" href="/favicon/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon/favicon-32.png" type="image/png">
+<link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
+<link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
 
 <nav>
   <div class="container">
     <div class="logo">FABIAN ÁVILA <span style="color:var(--accent)">·</span> FOTOGRAFÍA</div>
-    <a href="/" style="font-family:'Helvetica Neue',Arial,sans-serif; font-size:13px; letter-spacing:1px; color:var(--dark);">ES</a>
+    <div class="nav-right">
+      <div class="lang-switch">
+        <button class="lang-current" type="button">EN <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="lang-menu">
+          <a href="/">Español</a>
+          <a href="/en/" class="active">English</a>
+          <a href="/pt/">Português</a>
+        </div>
+      </div>
+      <div class="contact-trigger-wrap nav-contact-wrap">
+        <button class="nav-contact-btn contact-trigger" type="button">Contact</button>
+        <div class="contact-menu-popup">
+          <a href="https://wa.me/595994202592" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.43-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.43 9.9-9.9 0-2.64-1.03-5.13-2.9-7-1.87-1.87-4.35-2.9-7-2.9zm5.83 14.13c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.15.07.14.12.31.02.5-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.15.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.65.78 1.93.92.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+            WhatsApp
+          </a>
+          <a href="mailto:favila1696@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            Email
+          </a>
+          <a href="#contact" data-action="form">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+            Contact form
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
 </nav>
 
 <section class="hero">
   <div class="hero-content">
-    
-    <h1 data-en>Wedding Photographer<br>in Costa Rica</h1>
-    
-    <p data-en>Weddings and sessions throughout all of Costa Rica. Now booking December 2026.</p>
-    
-    <a href="#contact" class="btn" data-en>Book my date</a>
+    <h1>Wedding Photographer</h1>
+    <p>Real stories, captured with emotion and natural light — wherever life takes you.</p>
+    <div class="contact-trigger-wrap">
+      <button class="btn contact-trigger" type="button">Contact</button>
+      <div class="contact-menu-popup">
+        <a href="https://wa.me/595994202592" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.43-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.43 9.9-9.9 0-2.64-1.03-5.13-2.9-7-1.87-1.87-4.35-2.9-7-2.9zm5.83 14.13c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.15.07.14.12.31.02.5-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.15.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.65.78 1.93.92.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+          WhatsApp
+        </a>
+        <a href="mailto:favila1696@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          Email
+        </a>
+        <a href="#contact" data-action="form">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+          Contact form
+        </a>
+      </div>
+    </div>
   </div>
-  
-  <div class="hero-badge" data-en>★ Special launch pricing — December 2026 ★</div>
 </section>
 
 <section class="about">
   <div class="container">
     <div class="section-title">
-      <span data-en>About me</span>
-
-      <h2 data-en>Real stories, natural light</h2>
+      <span>About me</span>
+      <h2>Real stories, natural light</h2>
     </div>
     <div class="pura-vida-mark">
       <svg class="cr-map" viewBox="0 0 200 200" aria-hidden="true"><path fill="currentColor" d="M200,103.482L199.785,104.535L198.708,105.798L197.201,106.956L195.264,107.798L190.527,105.272L185.791,102.535L183.423,103.798L182.347,107.377L180.624,109.272L178.471,110.009L177.61,111.166L177.395,123.371L177.61,134.728L181.055,135.043L186.868,139.037L189.451,141.35L190.312,143.451L189.451,144.502L185.145,147.024L181.055,150.176L178.902,154.167L182.562,160.469L183.423,164.773L183.208,169.287L182.347,171.492L174.166,176.634L172.443,178.522L172.659,179.781L176.964,183.348L179.117,186.81L181.055,191.005L181.27,194.57L177.18,187.859L171.582,181.46L166.631,177.578L166.2,168.343L164.263,163.304L156.943,158.683L150.484,155.533L145.963,156.163L148.762,161.414L156.082,168.238L156.728,170.862L156.512,174.325L151.561,173.8L147.04,172.331L141.442,171.911L137.783,169.812L130.032,161.729L135.63,154.798L137.352,150.281L137.137,140.824L135.845,136.305L129.817,129.26L120.344,121.688L107.212,115.376L100.969,110.43L85.253,106.535L79.44,104.009L74.704,99.271L74.058,95.795L75.78,90.529L71.475,83.891L52.96,70.713L42.626,65.862L40.258,63.119L38.751,62.17L40.258,71.24L44.779,76.723L56.62,81.783L59.849,84.734L61.141,88.632L54.252,96.006L50.807,97.902L49.731,101.903L47.578,103.166L45.21,100.85L35.522,89.264L17.008,83.68L13.563,80.307L6.674,69.659L3.66,60.059L4.736,53.622L12.271,43.487L14.639,39.157L14.209,36.41L14.424,32.501L11.625,29.753L4.521,26.054L0,23.2L1.292,21.719L9.473,17.807L9.903,14.317L9.903,13.153L11.195,12.942L12.271,11.99L13.132,11.038L15.285,7.652L17.223,5.747L19.376,5.43L22.174,6.805L32.293,10.509L43.703,14.528L59.849,20.239L66.523,16.644L72.336,13.788L76.211,14.211L85.038,17.49L90.205,18.547L93.434,18.23L98.816,22.988L101.83,26.582L102.476,29.013L104.198,30.282L108.504,30.599L119.053,33.029L125.511,32.606L131.324,29.965L134.553,26.899L135.63,22.037L137.137,24.468L138.859,28.274L139.505,33.135L147.255,49.505L153.283,58.582L166.631,75.247L172.228,78.304L181.916,91.687L185.361,93.899L187.298,97.796L197.201,101.061Z"/></svg>
     </div>
-
-    <p data-en>I'm Fabian, a photographer specializing in social events, mainly weddings. My work is built on capturing authentic moments with an emotional eye — images that tell a story, reflect each couple's personality and convey what that day truly feels like. I combine technique, creativity and sensitivity to create photographs that last. Together with my team, we aim to capture the best day of your life as naturally and spontaneously as possible. Available for weddings throughout all of Costa Rica.</p>
+    <p>I'm Fabian, a photographer specializing in social events, mainly weddings. My work is built on capturing authentic moments with an emotional eye — images that tell a story, reflect each couple's personality and convey what that day truly feels like. I combine technique, creativity and sensitivity to create photographs that last. Together with my team, we aim to capture the best day of your life as naturally and spontaneously as possible. Available for weddings and sessions around the world.</p>
   </div>
 </section>
 
 <section class="gallery">
   <div class="container">
     <div class="section-title">
-      <span data-en>Portfolio</span>
-      
-      <h2 data-en>Recent work</h2>
+      <span>Portfolio</span>
+      <h2>Recent work</h2>
     </div>
-    <div class="wedding-gallery">
-      <div class="wedding-gallery-title">
-        <h3 data-en>Gabi &amp; Martin</h3>
-      </div>
-      <div class="grid">
-        <div class="ph"><img src="gallery/wedding-B-1.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 1"></div>
-        <div class="ph"><img src="gallery/wedding-B-2.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 2"></div>
-        <div class="ph"><img src="gallery/wedding-B-3.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 3"></div>
-        <div class="ph"><img src="gallery/wedding-B-4.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 4"></div>
-        <div class="ph"><img src="gallery/wedding-B-5.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 5"></div>
-        <div class="ph"><img src="gallery/wedding-B-6.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 6"></div>
-        <div class="ph"><img src="gallery/wedding-B-7.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 7"></div>
-        <div class="ph"><img src="gallery/wedding-B-8.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 8"></div>
-        <div class="ph"><img src="gallery/wedding-B-9.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 9"></div>
-        <div class="ph"><img src="gallery/wedding-B-10.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 10"></div>
-        <div class="ph"><img src="gallery/wedding-B-11.jpg" loading="lazy" alt="Gabi &amp; Martin - photo 11"></div>
-      </div>
-    </div>
-
-    <div class="wedding-gallery">
-      <div class="wedding-gallery-title">
-        <h3 data-en>Yele &amp; Matt</h3>
-      </div>
-      <div class="grid">
-        <div class="ph"><img src="gallery/wedding-C-1.jpg" loading="lazy" alt="Yele &amp; Matt - photo 1"></div>
-        <div class="ph"><img src="gallery/wedding-C-2.jpg" loading="lazy" alt="Yele &amp; Matt - photo 2"></div>
-        <div class="ph"><img src="gallery/wedding-C-3.jpg" loading="lazy" alt="Yele &amp; Matt - photo 3"></div>
-        <div class="ph"><img src="gallery/wedding-C-4.jpg" loading="lazy" alt="Yele &amp; Matt - photo 4"></div>
-        <div class="ph"><img src="gallery/wedding-C-5.jpg" loading="lazy" alt="Yele &amp; Matt - photo 5"></div>
-        <div class="ph"><img src="gallery/wedding-C-6.jpg" loading="lazy" alt="Yele &amp; Matt - photo 6"></div>
-        <div class="ph"><img src="gallery/wedding-C-7.jpg" loading="lazy" alt="Yele &amp; Matt - photo 7"></div>
-        <div class="ph"><img src="gallery/wedding-C-8.jpg" loading="lazy" alt="Yele &amp; Matt - photo 8"></div>
-        <div class="ph"><img src="gallery/wedding-C-9.jpg" loading="lazy" alt="Yele &amp; Matt - photo 9"></div>
-        <div class="ph"><img src="gallery/wedding-C-10.jpg" loading="lazy" alt="Yele &amp; Matt - photo 10"></div>
-        <div class="ph"><img src="gallery/wedding-C-11.jpg" loading="lazy" alt="Yele &amp; Matt - photo 11"></div>
-        <div class="ph"><img src="gallery/wedding-C-12.jpg" loading="lazy" alt="Yele &amp; Matt - photo 12"></div>
-      </div>
-    </div>
-
-    <div class="wedding-gallery">
-      <div class="wedding-gallery-title">
-        <h3 data-en>Techi &amp; Eze</h3>
-      </div>
-      <div class="grid">
-        <div class="ph"><img src="gallery/wedding-D-1.jpg" loading="lazy" alt="Techi &amp; Eze - photo 1"></div>
-        <div class="ph"><img src="gallery/wedding-D-2.jpg" loading="lazy" alt="Techi &amp; Eze - photo 2"></div>
-        <div class="ph"><img src="gallery/wedding-D-3.jpg" loading="lazy" alt="Techi &amp; Eze - photo 3"></div>
-        <div class="ph"><img src="gallery/wedding-D-4.jpg" loading="lazy" alt="Techi &amp; Eze - photo 4"></div>
-        <div class="ph"><img src="gallery/wedding-D-5.jpg" loading="lazy" alt="Techi &amp; Eze - photo 5"></div>
-        <div class="ph"><img src="gallery/wedding-D-6.jpg" loading="lazy" alt="Techi &amp; Eze - photo 6"></div>
-        <div class="ph"><img src="gallery/wedding-D-7.jpg" loading="lazy" alt="Techi &amp; Eze - photo 7"></div>
-        <div class="ph"><img src="gallery/wedding-D-8.jpg" loading="lazy" alt="Techi &amp; Eze - photo 8"></div>
-        <div class="ph"><img src="gallery/wedding-D-9.jpg" loading="lazy" alt="Techi &amp; Eze - photo 9"></div>
-        <div class="ph"><img src="gallery/wedding-D-10.jpg" loading="lazy" alt="Techi &amp; Eze - photo 10"></div>
-        <div class="ph"><img src="gallery/wedding-D-11.jpg" loading="lazy" alt="Techi &amp; Eze - photo 11"></div>
-        <div class="ph"><img src="gallery/wedding-D-12.jpg" loading="lazy" alt="Techi &amp; Eze - photo 12"></div>
-        <div class="ph"><img src="gallery/wedding-D-13.jpg" loading="lazy" alt="Techi &amp; Eze - photo 13"></div>
-        <div class="ph"><img src="gallery/wedding-D-14.jpg" loading="lazy" alt="Techi &amp; Eze - photo 14"></div>
-        <div class="ph"><img src="gallery/wedding-D-15.jpg" loading="lazy" alt="Techi &amp; Eze - photo 15"></div>
-        <div class="ph"><img src="gallery/wedding-D-16.jpg" loading="lazy" alt="Techi &amp; Eze - photo 16"></div>
-        <div class="ph"><img src="gallery/wedding-D-17.jpg" loading="lazy" alt="Techi &amp; Eze - photo 17"></div>
-        <div class="ph"><img src="gallery/wedding-D-18.jpg" loading="lazy" alt="Techi &amp; Eze - photo 18"></div>
-        <div class="ph"><img src="gallery/wedding-D-19.jpg" loading="lazy" alt="Techi &amp; Eze - photo 19"></div>
-      </div>
-    </div>
-
-    <div class="wedding-gallery">
-      <div class="wedding-gallery-title">
-        <h3 data-en>Carol &amp; Richard</h3>
-      </div>
-      <div class="grid">
-        <div class="ph"><img src="gallery/wedding-E-1.jpg" loading="lazy" alt="Carol &amp; Richard - photo 1"></div>
-        <div class="ph"><img src="gallery/wedding-E-2.jpg" loading="lazy" alt="Carol &amp; Richard - photo 2"></div>
-        <div class="ph"><img src="gallery/wedding-E-3.jpg" loading="lazy" alt="Carol &amp; Richard - photo 3"></div>
-        <div class="ph"><img src="gallery/wedding-E-4.jpg" loading="lazy" alt="Carol &amp; Richard - photo 4"></div>
-        <div class="ph"><img src="gallery/wedding-E-5.jpg" loading="lazy" alt="Carol &amp; Richard - photo 5"></div>
-        <div class="ph"><img src="gallery/wedding-E-6.jpg" loading="lazy" alt="Carol &amp; Richard - photo 6"></div>
-        <div class="ph"><img src="gallery/wedding-E-7.jpg" loading="lazy" alt="Carol &amp; Richard - photo 7"></div>
-        <div class="ph"><img src="gallery/wedding-E-8.jpg" loading="lazy" alt="Carol &amp; Richard - photo 8"></div>
-        <div class="ph"><img src="gallery/wedding-E-9.jpg" loading="lazy" alt="Carol &amp; Richard - photo 9"></div>
-        <div class="ph"><img src="gallery/wedding-E-10.jpg" loading="lazy" alt="Carol &amp; Richard - photo 10"></div>
-        <div class="ph"><img src="gallery/wedding-E-11.jpg" loading="lazy" alt="Carol &amp; Richard - photo 11"></div>
-        <div class="ph"><img src="gallery/wedding-E-12.jpg" loading="lazy" alt="Carol &amp; Richard - photo 12"></div>
-        <div class="ph"><img src="gallery/wedding-E-13.jpg" loading="lazy" alt="Carol &amp; Richard - photo 13"></div>
-        <div class="ph"><img src="gallery/wedding-E-14.jpg" loading="lazy" alt="Carol &amp; Richard - photo 14"></div>
-        <div class="ph"><img src="gallery/wedding-E-15.jpg" loading="lazy" alt="Carol &amp; Richard - photo 15"></div>
-        <div class="ph"><img src="gallery/wedding-E-16.jpg" loading="lazy" alt="Carol &amp; Richard - photo 16"></div>
-        <div class="ph"><img src="gallery/wedding-E-17.jpg" loading="lazy" alt="Carol &amp; Richard - photo 17"></div>
-        <div class="ph"><img src="gallery/wedding-E-18.jpg" loading="lazy" alt="Carol &amp; Richard - photo 18"></div>
-        <div class="ph"><img src="gallery/wedding-E-19.jpg" loading="lazy" alt="Carol &amp; Richard - photo 19"></div>
-        <div class="ph"><img src="gallery/wedding-E-20.jpg" loading="lazy" alt="Carol &amp; Richard - photo 20"></div>
-      </div>
-    </div>
-
-    <div class="wedding-gallery">
-      <div class="wedding-gallery-title">
-        <h3 data-en>Lauri y Nahum</h3>
-      </div>
-      <div class="grid">
-        <div class="ph"><img src="gallery/wedding-G1-1.jpg" loading="lazy" alt="Lauri y Nahum - photo 1"></div>
-        <div class="ph"><img src="gallery/wedding-G1-2.jpg" loading="lazy" alt="Lauri y Nahum - photo 2"></div>
-        <div class="ph"><img src="gallery/wedding-G1-3.jpg" loading="lazy" alt="Lauri y Nahum - photo 3"></div>
-        <div class="ph"><img src="gallery/wedding-G1-4.jpg" loading="lazy" alt="Lauri y Nahum - photo 4"></div>
-        <div class="ph"><img src="gallery/wedding-G1-5.jpg" loading="lazy" alt="Lauri y Nahum - photo 5"></div>
-        <div class="ph"><img src="gallery/wedding-G1-6.jpg" loading="lazy" alt="Lauri y Nahum - photo 6"></div>
-        <div class="ph"><img src="gallery/wedding-G1-7.jpg" loading="lazy" alt="Lauri y Nahum - photo 7"></div>
-        <div class="ph"><img src="gallery/wedding-G1-8.jpg" loading="lazy" alt="Lauri y Nahum - photo 8"></div>
-        <div class="ph"><img src="gallery/wedding-G1-9.jpg" loading="lazy" alt="Lauri y Nahum - photo 9"></div>
-        <div class="ph"><img src="gallery/wedding-G1-10.jpg" loading="lazy" alt="Lauri y Nahum - photo 10"></div>
-        <div class="ph"><img src="gallery/wedding-G1-11.jpg" loading="lazy" alt="Lauri y Nahum - photo 11"></div>
-        <div class="ph"><img src="gallery/wedding-G1-12.jpg" loading="lazy" alt="Lauri y Nahum - photo 12"></div>
-        <div class="ph"><img src="gallery/wedding-G1-13.jpg" loading="lazy" alt="Lauri y Nahum - photo 13"></div>
-        <div class="ph"><img src="gallery/wedding-G1-14.jpg" loading="lazy" alt="Lauri y Nahum - photo 14"></div>
-        <div class="ph"><img src="gallery/wedding-G1-15.jpg" loading="lazy" alt="Lauri y Nahum - photo 15"></div>
-        <div class="ph"><img src="gallery/wedding-G1-16.jpg" loading="lazy" alt="Lauri y Nahum - photo 16"></div>
-        <div class="ph"><img src="gallery/wedding-G1-17.jpg" loading="lazy" alt="Lauri y Nahum - photo 17"></div>
-        <div class="ph"><img src="gallery/wedding-G1-18.jpg" loading="lazy" alt="Lauri y Nahum - photo 18"></div>
-        <div class="ph"><img src="gallery/wedding-G1-19.jpg" loading="lazy" alt="Lauri y Nahum - photo 19"></div>
-        <div class="ph"><img src="gallery/wedding-G1-20.jpg" loading="lazy" alt="Lauri y Nahum - photo 20"></div>
-        <div class="ph"><img src="gallery/wedding-G1-21.jpg" loading="lazy" alt="Lauri y Nahum - photo 21"></div>
-        <div class="ph"><img src="gallery/wedding-G1-22.jpg" loading="lazy" alt="Lauri y Nahum - photo 22"></div>
-        <div class="ph"><img src="gallery/wedding-G1-23.jpg" loading="lazy" alt="Lauri y Nahum - photo 23"></div>
-        <div class="ph"><img src="gallery/wedding-G1-24.jpg" loading="lazy" alt="Lauri y Nahum - photo 24"></div>
-        <div class="ph"><img src="gallery/wedding-G1-25.jpg" loading="lazy" alt="Lauri y Nahum - photo 25"></div>
-        <div class="ph"><img src="gallery/wedding-G1-26.jpg" loading="lazy" alt="Lauri y Nahum - photo 26"></div>
-        <div class="ph"><img src="gallery/wedding-G1-27.jpg" loading="lazy" alt="Lauri y Nahum - photo 27"></div>
-        <div class="ph"><img src="gallery/wedding-G1-28.jpg" loading="lazy" alt="Lauri y Nahum - photo 28"></div>
-        <div class="ph"><img src="gallery/wedding-G1-29.jpg" loading="lazy" alt="Lauri y Nahum - photo 29"></div>
-        <div class="ph"><img src="gallery/wedding-G1-30.jpg" loading="lazy" alt="Lauri y Nahum - photo 30"></div>
-        <div class="ph"><img src="gallery/wedding-G1-31.jpg" loading="lazy" alt="Lauri y Nahum - photo 31"></div>
-        <div class="ph"><img src="gallery/wedding-G1-32.jpg" loading="lazy" alt="Lauri y Nahum - photo 32"></div>
-        <div class="ph"><img src="gallery/wedding-G1-33.jpg" loading="lazy" alt="Lauri y Nahum - photo 33"></div>
-        <div class="ph"><img src="gallery/wedding-G1-34.jpg" loading="lazy" alt="Lauri y Nahum - photo 34"></div>
-        <div class="ph"><img src="gallery/wedding-G1-35.jpg" loading="lazy" alt="Lauri y Nahum - photo 35"></div>
-        <div class="ph"><img src="gallery/wedding-G1-36.jpg" loading="lazy" alt="Lauri y Nahum - photo 36"></div>
-        <div class="ph"><img src="gallery/wedding-G1-37.jpg" loading="lazy" alt="Lauri y Nahum - photo 37"></div>
-        <div class="ph"><img src="gallery/wedding-G1-38.jpg" loading="lazy" alt="Lauri y Nahum - photo 38"></div>
-        <div class="ph"><img src="gallery/wedding-G1-39.jpg" loading="lazy" alt="Lauri y Nahum - photo 39"></div>
-        <div class="ph"><img src="gallery/wedding-G1-40.jpg" loading="lazy" alt="Lauri y Nahum - photo 40"></div>
-        <div class="ph"><img src="gallery/wedding-G1-41.jpg" loading="lazy" alt="Lauri y Nahum - photo 41"></div>
-        <div class="ph"><img src="gallery/wedding-G1-42.jpg" loading="lazy" alt="Lauri y Nahum - photo 42"></div>
-        <div class="ph"><img src="gallery/wedding-G1-43.jpg" loading="lazy" alt="Lauri y Nahum - photo 43"></div>
-      </div>
-    </div>
-
-    <div class="wedding-gallery">
-      <div class="wedding-gallery-title">
-        <h3 data-en>Pati y Ricard</h3>
-      </div>
-      <div class="grid">
-        <div class="ph"><img src="gallery/wedding-G2-1.jpg" loading="lazy" alt="Pati y Ricard - photo 1"></div>
-        <div class="ph"><img src="gallery/wedding-G2-2.jpg" loading="lazy" alt="Pati y Ricard - photo 2"></div>
-        <div class="ph"><img src="gallery/wedding-G2-3.jpg" loading="lazy" alt="Pati y Ricard - photo 3"></div>
-        <div class="ph"><img src="gallery/wedding-G2-4.jpg" loading="lazy" alt="Pati y Ricard - photo 4"></div>
-        <div class="ph"><img src="gallery/wedding-G2-5.jpg" loading="lazy" alt="Pati y Ricard - photo 5"></div>
-        <div class="ph"><img src="gallery/wedding-G2-6.jpg" loading="lazy" alt="Pati y Ricard - photo 6"></div>
-        <div class="ph"><img src="gallery/wedding-G2-7.jpg" loading="lazy" alt="Pati y Ricard - photo 7"></div>
-        <div class="ph"><img src="gallery/wedding-G2-8.jpg" loading="lazy" alt="Pati y Ricard - photo 8"></div>
-        <div class="ph"><img src="gallery/wedding-G2-9.jpg" loading="lazy" alt="Pati y Ricard - photo 9"></div>
-        <div class="ph"><img src="gallery/wedding-G2-10.jpg" loading="lazy" alt="Pati y Ricard - photo 10"></div>
-        <div class="ph"><img src="gallery/wedding-G2-11.jpg" loading="lazy" alt="Pati y Ricard - photo 11"></div>
-        <div class="ph"><img src="gallery/wedding-G2-12.jpg" loading="lazy" alt="Pati y Ricard - photo 12"></div>
-        <div class="ph"><img src="gallery/wedding-G2-13.jpg" loading="lazy" alt="Pati y Ricard - photo 13"></div>
-        <div class="ph"><img src="gallery/wedding-G2-14.jpg" loading="lazy" alt="Pati y Ricard - photo 14"></div>
-        <div class="ph"><img src="gallery/wedding-G2-15.jpg" loading="lazy" alt="Pati y Ricard - photo 15"></div>
-        <div class="ph"><img src="gallery/wedding-G2-16.jpg" loading="lazy" alt="Pati y Ricard - photo 16"></div>
-        <div class="ph"><img src="gallery/wedding-G2-17.jpg" loading="lazy" alt="Pati y Ricard - photo 17"></div>
-        <div class="ph"><img src="gallery/wedding-G2-18.jpg" loading="lazy" alt="Pati y Ricard - photo 18"></div>
-      </div>
-    </div>
-
-    <div class="wedding-gallery">
-      <div class="wedding-gallery-title">
-        <h3 data-en>Pamela y Dennis</h3>
-      </div>
-      <div class="grid">
-        <div class="ph"><img src="gallery/wedding-H-1.jpg" loading="lazy" alt="Pamela y Dennis - photo 1"></div>
-        <div class="ph"><img src="gallery/wedding-H-2.jpg" loading="lazy" alt="Pamela y Dennis - photo 2"></div>
-        <div class="ph"><img src="gallery/wedding-H-3.jpg" loading="lazy" alt="Pamela y Dennis - photo 3"></div>
-        <div class="ph"><img src="gallery/wedding-H-4.jpg" loading="lazy" alt="Pamela y Dennis - photo 4"></div>
-        <div class="ph"><img src="gallery/wedding-H-5.jpg" loading="lazy" alt="Pamela y Dennis - photo 5"></div>
-        <div class="ph"><img src="gallery/wedding-H-6.jpg" loading="lazy" alt="Pamela y Dennis - photo 6"></div>
-        <div class="ph"><img src="gallery/wedding-H-7.jpg" loading="lazy" alt="Pamela y Dennis - photo 7"></div>
-        <div class="ph"><img src="gallery/wedding-H-8.jpg" loading="lazy" alt="Pamela y Dennis - photo 8"></div>
-        <div class="ph"><img src="gallery/wedding-H-9.jpg" loading="lazy" alt="Pamela y Dennis - photo 9"></div>
-        <div class="ph"><img src="gallery/wedding-H-10.jpg" loading="lazy" alt="Pamela y Dennis - photo 10"></div>
-        <div class="ph"><img src="gallery/wedding-H-11.jpg" loading="lazy" alt="Pamela y Dennis - photo 11"></div>
-        <div class="ph"><img src="gallery/wedding-H-12.jpg" loading="lazy" alt="Pamela y Dennis - photo 12"></div>
-        <div class="ph"><img src="gallery/wedding-H-13.jpg" loading="lazy" alt="Pamela y Dennis - photo 13"></div>
-        <div class="ph"><img src="gallery/wedding-H-14.jpg" loading="lazy" alt="Pamela y Dennis - photo 14"></div>
-      </div>
-    </div>
-
-    <div class="wedding-gallery">
-      <div class="wedding-gallery-title">
-        <h3 data-en>Salmy y Victor</h3>
-      </div>
-      <div class="grid">
-        <div class="ph"><img src="gallery/wedding-I-1.jpg" loading="lazy" alt="Salmy y Victor - photo 1"></div>
-        <div class="ph"><img src="gallery/wedding-I-2.jpg" loading="lazy" alt="Salmy y Victor - photo 2"></div>
-        <div class="ph"><img src="gallery/wedding-I-3.jpg" loading="lazy" alt="Salmy y Victor - photo 3"></div>
-        <div class="ph"><img src="gallery/wedding-I-4.jpg" loading="lazy" alt="Salmy y Victor - photo 4"></div>
-        <div class="ph"><img src="gallery/wedding-I-5.jpg" loading="lazy" alt="Salmy y Victor - photo 5"></div>
-        <div class="ph"><img src="gallery/wedding-I-6.jpg" loading="lazy" alt="Salmy y Victor - photo 6"></div>
-        <div class="ph"><img src="gallery/wedding-I-7.jpg" loading="lazy" alt="Salmy y Victor - photo 7"></div>
-        <div class="ph"><img src="gallery/wedding-I-8.jpg" loading="lazy" alt="Salmy y Victor - photo 8"></div>
-        <div class="ph"><img src="gallery/wedding-I-9.jpg" loading="lazy" alt="Salmy y Victor - photo 9"></div>
-        <div class="ph"><img src="gallery/wedding-I-10.jpg" loading="lazy" alt="Salmy y Victor - photo 10"></div>
-        <div class="ph"><img src="gallery/wedding-I-11.jpg" loading="lazy" alt="Salmy y Victor - photo 11"></div>
-        <div class="ph"><img src="gallery/wedding-I-12.jpg" loading="lazy" alt="Salmy y Victor - photo 12"></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="services">
-  <div class="container">
-    <div class="section-title">
-      <span data-en>Pricing</span>
-      
-      <h2 data-en>Wedding packages</h2>
-    </div>
-    <div class="cards-4">
-      <div class="card">
-        <h3 data-en>Essential</h3>
-        <div class="price">$315<small data-en>3 hours of coverage</small></div>
-        <ul>
-          <li data-en>Editing</li>
-          <li data-en>Delivery of all captured photos</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3 data-en>Mini Wedding</h3>
-        <div class="price">$890<small data-en>6 hours of coverage</small></div>
-        <ul>
-          <li data-en>Editing</li>
-          <li data-en>Delivery of all captured photos</li>
-        </ul>
-      </div>
-      <div class="card">
-        <h3 data-en>Complete</h3>
-        <div class="price">$1,195<small data-en>8 hours of coverage</small></div>
-        <ul>
-          <li data-en>Editing</li>
-          <li data-en>Pre-wedding session</li>
-          <li data-en>Delivery of all captured photos</li>
-        </ul>
-      </div>
-      <div class="card">
-        <span class="badge-launch" data-en>MOST COMPLETE</span>
-        <h3 data-en>Premium</h3>
-        <div class="price">$1,885<small data-en>10 hours of coverage</small></div>
-        <ul>
-          <li data-en>Editing</li>
-          <li data-en>Pre-wedding + post-wedding session</li>
-          <li data-en>Delivery of all captured photos</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="extras-box">
-      <h4 data-en>Included in every package</h4>
-      <ul>
-        <li data-en>Guidance and support through the planning of the entire process</li>
-      </ul>
-      <p class="payment-note" data-en>To secure your date, a 30% deposit of the total is due at booking. The remaining balance can be paid up until the day of the event. Prices valid for events held between December 1 and December 30, 2026.</p>
-    </div>
-
-    <p style="text-align:center; margin-top:28px; font-family:'Helvetica Neue',Arial,sans-serif; font-size:14px; color:var(--gray);">
-      <span data-en>Couples, family and proposal sessions available separately · </span>
-      <span data-en>20% off if you book before September 15, 2026</span>
-    </p>
+    <div class="gallery-grid" data-view-label="View gallery" data-photos-label="photos"></div>
   </div>
 </section>
 
 <section class="partners">
   <div class="container">
     <div class="section-title">
-      <span style="color:var(--accent)" data-en>Partners</span>
-      
-      <h2 data-en>Wedding planners & venues</h2>
+      <span style="color:var(--accent)">Partners</span>
+      <h2>Wedding planners &amp; venues</h2>
     </div>
-    
-    <p data-en>Do you plan weddings in Costa Rica? I offer a 10% referral commission for every wedding you refer that books. No cost, no obligation.</p>
-    
-    <a href="#contact" class="btn" data-en>Become a partner</a>
+    <p>Do you plan weddings or manage venues? Let's add your next event to the calendar and work together.</p>
+    <div class="contact-trigger-wrap">
+      <button class="btn contact-trigger" type="button">Become a partner</button>
+      <div class="contact-menu-popup">
+        <a href="https://wa.me/595994202592" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.43-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.43 9.9-9.9 0-2.64-1.03-5.13-2.9-7-1.87-1.87-4.35-2.9-7-2.9zm5.83 14.13c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.15.07.14.12.31.02.5-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.15.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.65.78 1.93.92.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+          WhatsApp
+        </a>
+        <a href="mailto:favila1696@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          Email
+        </a>
+        <a href="#contact" data-action="form">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+          Contact form
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
 <section class="contact" id="contact">
   <div class="container">
     <div class="section-title">
-      <span data-en>Contact</span>
-      
-      <h2 data-en>Let's book your date</h2>
+      <span>Contact</span>
+      <h2>Let's talk</h2>
     </div>
-    <div class="contact-grid">
-      <div class="contact-item"><strong data-en>Email</strong><a href="mailto:favila1696@gmail.com">favila1696@gmail.com</a></div>
-      <div class="contact-item"><strong data-en>WhatsApp</strong><a href="https://wa.me/595994202592">+595 994 202 592</a></div>
-      <div class="contact-item"><strong>Instagram</strong><a href="https://instagram.com/fabianavila.ph">@fabianavila.ph</a></div>
+    <div class="contact-wrap">
+      <p style="max-width:520px;color:var(--gray);margin-bottom:6px;">Tell me about your event and we'll sort out the details — whichever way is easiest for you.</p>
+      <div class="contact-trigger-wrap">
+        <button class="btn contact-trigger" type="button">Contact</button>
+        <div class="contact-menu-popup">
+          <a href="https://wa.me/595994202592" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.9 4.43-9.9 9.9 0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.9-4.43 9.9-9.9 0-2.64-1.03-5.13-2.9-7-1.87-1.87-4.35-2.9-7-2.9zm5.83 14.13c-.24.68-1.4 1.3-1.94 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.8-4.16-4.94-4.35-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.78-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.15.07.14.12.31.02.5-.1.19-.15.31-.3.48-.15.17-.31.38-.44.51-.15.15-.3.31-.13.6.17.29.75 1.24 1.62 2.01 1.11.99 2.05 1.3 2.34 1.45.29.15.46.12.63-.07.17-.19.72-.84.92-1.13.19-.29.38-.24.64-.14.26.1 1.65.78 1.93.92.29.14.48.22.55.34.07.12.07.68-.17 1.36z"/></svg>
+            WhatsApp
+          </a>
+          <a href="mailto:favila1696@gmail.com">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            Email
+          </a>
+          <a href="#contact" data-action="form">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6"/><path d="M9 13h6M9 17h4"/></svg>
+            Contact form
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form-panel">
+        <form data-msg-ok="Thanks! Your message was sent — I'll get back to you soon." data-msg-err="Something went wrong. Try WhatsApp or email while we sort it out.">
+          <label>Name</label>
+          <input type="text" name="name" required>
+          <label>Email</label>
+          <input type="email" name="email" required>
+          <label>Event date (optional)</label>
+          <input type="date" name="eventDate">
+          <label>Message</label>
+          <textarea name="message" required></textarea>
+          <button type="submit" class="btn">Send message</button>
+          <div class="form-status"></div>
+        </form>
+      </div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="container">
-    
-    <span data-en>© 2026 Fabian Ávila · Costa Rica</span>
+    <div class="footer-social">
+      <a href="https://instagram.com/fabianavila.ph" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+      </a>
+    </div>
+    <div><span>© 2026 Fabian Ávila</span></div>
   </div>
 </footer>
 
+<div class="lightbox">
+  <button class="lightbox-close" type="button" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </button>
+  <div class="lightbox-stage">
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <img src="" alt="">
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 6l6 6-6 6"/></svg>
+    </button>
+  </div>
+  <div class="lightbox-meta">
+    <div class="lb-title"></div>
+    <div class="lb-count"></div>
+  </div>
+</div>
+
+<script src="/js/main.js"></script>
 </body>
 </html>
