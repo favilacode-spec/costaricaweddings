@@ -12,6 +12,11 @@ var GALLERIES = {
 
 var WHATSAPP_NUMBER = "595994202592";
 var CONTACT_EMAIL = "favila1696@gmail.com";
+// The Web3Forms Access Key is loaded at runtime from /api/config.js (which reads
+// it from the WEB3FORMS_ACCESS_KEY env var in Vercel), so it never lives in the
+// git repo. Web3Forms' own docs say this key is safe to expose to visitors —
+// it's just not committed to source control here.
+var WEB3FORMS_ACCESS_KEY = window.WEB3FORMS_ACCESS_KEY || "";
 
 document.addEventListener("DOMContentLoaded", function () {
   buildGalleryCards();
@@ -156,28 +161,32 @@ function initContactForm() {
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    var data = {
+    var lang = document.documentElement.lang;
+    var payload = {
+      access_key: WEB3FORMS_ACCESS_KEY,
+      subject: "Nuevo contacto desde fabianavila site (" + (lang || "?") + ")",
+      from_name: form.name.value,
       name: form.name.value,
       email: form.email.value,
-      eventDate: form.eventDate ? form.eventDate.value : "",
-      message: form.message.value,
-      lang: document.documentElement.lang
+      event_date: (form.eventDate && form.eventDate.value) || "—",
+      message: form.message.value
     };
     var submitBtn = form.querySelector('button[type="submit"]');
     submitBtn.disabled = true;
     statusEl.textContent = "";
     statusEl.className = "form-status";
 
-    fetch("/api/contact", {
+    // Web3Forms is designed to be called directly from the browser (their API
+    // blocks server-side/proxy calls on the free plan), so we submit straight
+    // from here instead of routing through our own backend.
+    fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(data)
+      headers: { "Content-Type": "application/json", Accept: "application/json" },
+      body: JSON.stringify(payload)
     })
-      .then(function (res) {
-        if (!res.ok) throw new Error("bad response");
-        return res.json();
-      })
-      .then(function () {
+      .then(function (res) { return res.json(); })
+      .then(function (result) {
+        if (!result || result.success === false) throw new Error("delivery failed");
         statusEl.textContent = form.getAttribute("data-msg-ok") || "Message sent.";
         statusEl.className = "form-status ok";
         form.reset();
